@@ -1,12 +1,9 @@
-# NMDBA-Kekule
-
-Simple molecule viewer via NodeJS server, Angular, MongoDB and Kekule.JS
+Server for project for DIRI, MongoDB and NodeJS
 
 Working example:
 
-Client AWS: http://ec2-34-207-181-245.compute-1.amazonaws.com:80/
+http://35.175.221.59:1213/getcontent
 
-API AWS: http://ec2-34-207-181-245.compute-1.amazonaws.com:1212/getcontent
 
 Install and run server:
 
@@ -14,4 +11,3 @@ Install and run server:
 
 `node server.js`
 
-Open `client\index.html` for result
