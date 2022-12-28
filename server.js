@@ -52,7 +52,7 @@ app.get('/getcontent', function(req, res) {
       });
       str = '[';
       data.forEach(function(ent1) {
-        str = str + '{ "name" : "' + ent1.name + '",' + '"image" : "' + ent1.image + '",' + '"decription" : "' + ent1.decription + '",' +  '"price" : "' + ent1.price + '",' +  '"id" : "' + ent1._id + '",' +  '"nutricion" : "' + ent1.nutricion + '",' +  '"isOnSale" : "' + ent1.isOnSale + '",' +  '"quantityInCart" : "' + ent1.quantityInCart+ '"},' + '\n';
+        str = str + '{ "name" : "' + ent1.name + '",' + '"image" : "' + ent1.image + '",' + '"decription" : "' + ent1.decription + '",' +  '"price" : ' + ent1.price + ',' +  '"id" : "' + ent1._id + '",' +  '"nutricion" : "' + ent1.nutricion + '",' +  '"isOnSale" : ' + ent1.isOnSale + ',' +  '"quantityInCart" : ' + ent1.quantityInCart+ '},' + '\n';
       });
       str = str.trim();
       str = str.substring(0, str.length - 1);
