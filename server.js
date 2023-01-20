@@ -5,7 +5,7 @@ const cors = require('cors');
 var mongojs = require('mongojs');
 var session = require('express-session');
 var app = express();
-var databaseUrl = "mongodb://localhost:27017/server1";
+var databaseUrl = "mongodb://platoserver:LR3iUXpFRWWOerIEXU7i4IGYoKwIP0pjbdWEh8EoFXC0Hh2LpDXFRpBLEqXd6DOsJ9WZ19AF9q6zACDbxTEJQQ==@platoserver.mongo.cosmos.azure.com:10255/server1?ssl=true&retrywrites=false&appName=@platoserver@";
 var collections = ["platos"];
 var db = mongojs(databaseUrl, collections);
 
@@ -62,6 +62,28 @@ app.get('/getcontent', function(req, res) {
   });
 });
 
+app.get('/getvideos', function(req, res) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header("Access-Control-Allow-Methods", "GET, OPTIONS")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  db.videos.find('', function(err, data) {
+    if (err || !data) console.log("No videos found");
+    else {
+      res.writeHead(200, {
+        'Content-Type': 'application/json'
+      });
+      str = '[';
+      data.forEach(function(ent1) {
+        str = str + '{ "name" : "' + ent1.name + '",' + '"image" : "' + ent1.image + '",' + '"decription" : "' + ent1.decription + '",' +  '"duration" : ' + ent1.duration + ',' +  '"id" : "' + ent1._id + '",' +  '"provider" : "' + ent1.provider + '",' +  '"embed" : ' + ent1.embed + ',' +  '"category" : ' + ent1.category+',' +  '"artist" : ' + ent1.artist+',' +  '"tags" : ' + ent1.tags+ '},' + '\n';
+      });
+      str = str.trim();
+      str = str.substring(0, str.length - 1);
+      str = str + ']';
+      res.end(str);
+    }
+  });
+});
+
 app.post('/insertplato', function(req, res) {
   console.log("POST: ");
   res.header("Access-Control-Allow-Origin", "*");
@@ -87,4 +109,4 @@ app.post('/insertplato', function(req, res) {
 
 
 
-app.listen(1213);
+app.listen(8080);

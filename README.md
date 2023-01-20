@@ -2,7 +2,7 @@ Server for project for DIRI, MongoDB and NodeJS
 
 Working example:
 
-http://35.175.221.59:1213/getcontent
+https://platoserver.azurewebsites.net/getcontent
 
 
 Install and run server:

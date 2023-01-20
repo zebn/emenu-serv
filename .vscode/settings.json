@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/6ee11279-e9bd-4a16-aa34-4c5f2d837435/AppServices/subscriptions/6ee11279-e9bd-4a16-aa34-4c5f2d837435/resourceGroups/resourse1/providers/Microsoft.Web/sites/platoserver",
+    "appService.deploySubpath": "."
+}
