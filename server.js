@@ -5,7 +5,7 @@ const cors = require('cors');
 var mongojs = require('mongojs');
 var session = require('express-session');
 var app = express();
-var databaseUrl = "mongodb://platoserver:LR3iUXpFRWWOerIEXU7i4IGYoKwIP0pjbdWEh8EoFXC0Hh2LpDXFRpBLEqXd6DOsJ9WZ19AF9q6zACDbxTEJQQ==@platoserver.mongo.cosmos.azure.com:10255/server1?ssl=true&retrywrites=false&appName=@platoserver@";
+var databaseUrl = "";
 var collections = ["platos"];
 var db = mongojs(databaseUrl, collections);
 
